@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux'
+import { getUser } from 'ReactNativeRedux/src/actions/user';
 
-export default class App extends Component {
+class App extends Component {
+    componentWillMount(){
+        this.props.dispatch(getUser());
+    }
     render() {
+        console.log('this.props: ', this.props)
         return (
             <View>
                 <Text>Testing ...</Text>
@@ -16,3 +22,10 @@ export default class App extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    let { user } = state;
+    return { user }
+};
+
+export default connect(mapStateToProps)(App);

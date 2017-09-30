@@ -5,7 +5,7 @@ const initialState = {
     loading: false
 };
 
-export default function userReducer (state = initialState, action) {
+export default function userReducer (state = initialState, action = {}) {
     switch (action.type) {
         case USER_PROFILE_API:
             return Object.assign({}, state, {loading: true});
