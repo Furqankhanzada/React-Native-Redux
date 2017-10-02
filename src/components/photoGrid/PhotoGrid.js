@@ -13,7 +13,7 @@ export default  class PhotoGrid extends Component {
         return(
             <View style={ PhotoGridStyles.container }>
                 {popularPhotos.posts.map((post) => {
-                    return <View style={ PhotoGridStyles.list }>
+                    return <View key={post.objectId} style={ PhotoGridStyles.list }>
                         <Image style={ PhotoGridStyles.image } source={{ uri: post.thumbnail }} />
                     </View>
                 })}
