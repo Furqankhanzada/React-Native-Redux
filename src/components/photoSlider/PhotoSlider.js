@@ -6,7 +6,6 @@ import Swiper from 'react-native-swiper'
 export default  class PhotoSlider extends Component {
     render() {
         const { userPhotos } = this.props;
-        console.log('posts : ', this.props)
 
         if(userPhotos.loading || !userPhotos.posts )
             return null;
